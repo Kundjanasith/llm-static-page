@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="description" content="A static website with a private, in-browser AI assistant, ready for GitHub Pages." />
+  <title>Nova | AI-powered static website</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="glow glow-a"></div><div class="glow glow-b"></div>
+  <header class="topbar wrap">
+    <a href="#home" class="brand"><span class="brand-mark">✳</span> NOVA<span class="brand-dot">.</span></a>
+    <nav aria-label="Main navigation"><a href="#features">Features</a><a href="#how-it-works">How it works</a><a href="https://github.com/mlc-ai/web-llm" target="_blank" rel="noopener noreferrer">WebLLM ↗</a></nav>
+    <a href="#assistant" class="nav-cta">Try AI <span>↗</span></a>
+  </header>
+  <main id="home">
+    <section class="hero wrap">
+      <div class="hero-copy"><span class="eyebrow"><span class="pulse"></span> STATIC WEBSITE · REAL AI</span>
+        <h1>A smarter web,<br /><em>without a server.</em></h1>
+        <p>Meet a beautiful, lightweight website with an AI assistant built right in. Publish on GitHub Pages, then run AI directly inside supported browsers.</p>
+        <div class="hero-actions"><a class="btn primary" href="#assistant">Launch the assistant <span>↗</span></a><a class="btn secondary" href="#how-it-works">Explore how it works <span>↓</span></a></div>
+        <div class="hero-note"><span class="check">✓</span> Free static hosting <span class="separator">·</span> No API key in your code <span class="separator">·</span> AI runs locally</div>
+      </div>
+      <div class="chat-shell" id="assistant">
+        <div class="chat-top"><div class="avatar">✳</div><div class="chat-top-copy"><strong>Nova Assistant</strong><small><span id="statusDot" class="status-dot"></span> <span id="statusLabel">Not loaded</span></small></div><button type="button" id="clearChat" class="icon-btn" title="Clear conversation" aria-label="Clear conversation">↺</button></div>
+        <div class="chat-messages" id="messages" role="log" aria-live="polite" aria-label="Conversation"><div class="message assistant"><div class="message-avatar">✳</div><div class="bubble"><p>Hey there! 👋</p><p>I'm an AI that can run right in your browser. To start chatting, load the model below.</p></div></div></div>
+        <div class="quick-prompts" id="suggestions"><button type="button" data-prompt="Explain how GitHub Pages works in simple terms.">How does GitHub Pages work?</button><button type="button" data-prompt="Give me three ideas for a creative portfolio website.">Website ideas</button></div>
+        <div class="load-panel" id="loadPanel"><div class="load-panel-row"><span id="modelText">Browser AI · 1B model</span><button type="button" id="loadModel" class="load-btn">Load AI model ↗</button></div><div class="progress" id="progressTrack" hidden><div id="progressBar"></div></div><p id="progressText">Requires WebGPU. First visit downloads model files; later visits can use the browser cache.</p></div>
+        <form id="chatForm" class="chat-form"><label class="sr-only" for="prompt">Message Nova</label><textarea id="prompt" placeholder="Ask anything…" rows="1" maxlength="4000" disabled></textarea><button id="send" type="submit" aria-label="Send message" disabled>↑</button></form>
+        <div class="chat-footer">Powered by WebLLM · Responses may be inaccurate</div>
+      </div>
+    </section>
+    <section class="features wrap" id="features"><div class="section-heading"><span class="eyebrow">WHY THIS WORKS</span><h2>Simple by design.<br/><span>Powerful by nature.</span></h2></div><div class="feature-grid"><article class="feature"><span class="feature-icon">◇</span><h3>100% static hosting</h3><p>Just HTML, CSS, and JavaScript. No Node.js server, database, or build step to deploy.</p></article><article class="feature"><span class="feature-icon">✳</span><h3>Real language model</h3><p>WebLLM runs a language model in supported browsers with WebGPU acceleration.</p></article><article class="feature"><span class="feature-icon">⌘</span><h3>Private by architecture</h3><p>Chat inference happens locally in the visitor's browser. Model assets are downloaded from external hosts.</p></article></div></section>
+    <section class="how wrap" id="how-it-works"><div><span class="eyebrow">THE SETUP</span><h2>From files to<br/><span>live website.</span></h2><p>Upload the included files to a GitHub repository, enable GitHub Pages, and share your URL. Visitors with compatible hardware can activate AI.</p></div><ol><li><span>01</span><div><strong>Upload</strong><p>Commit <code>index.html</code>, <code>styles.css</code>, and <code>app.js</code> to your repository.</p></div></li><li><span>02</span><div><strong>Publish</strong><p>In Settings → Pages, deploy from <code>main</code> and <code>/(root)</code>.</p></div></li><li><span>03</span><div><strong>Chat</strong><p>Open the site, select “Load AI model”, and start chatting when the download finishes.</p></div></li></ol></section>
+  </main>
+  <footer class="wrap"><div class="brand"><span class="brand-mark">✳</span> NOVA<span class="brand-dot">.</span></div><span>Static site. Dynamic ideas.</span><span>Made for GitHub Pages</span></footer>
+</body>
+</html>
